@@ -1,18 +1,23 @@
-// eslint.config.js
-import { defineConfig } from 'eslint';
+// eslint.config.js (CommonJS)
 
-export default defineConfig({
-  extends: ['eslint:recommended'],  // Extend from the recommended rules
-  parserOptions: {
-    ecmaVersion: 2020,  // Set ECMAScript version
-    sourceType: 'module',  // Enable ES Modules
-  },
+const { defineConfig } = require('eslint');
+
+module.exports = defineConfig({
+  // Your ESLint rules here
   env: {
-    node: true,  // For Node.js environments
-    es2020: true,  // For ECMAScript 2020
+    node: true,
+    es2021: true
+  },
+  extends: [
+    'eslint:recommended'
+  ],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module'
   },
   rules: {
-    // Define custom rules or override defaults here
-    'no-console': 'off',  // Example: allow console statements
-  },
+    // Add your rules here
+    'no-unused-vars': 'warn',
+    'no-console': 'off',
+  }
 });

@@ -1,8 +1,9 @@
-// eslint.config.js (CommonJS)
+// eslint.config.js (ES Modules)
 
-const { defineConfig } = require('eslint');
+import eslint from 'eslint';
+const { defineConfig } = eslint;
 
-module.exports = defineConfig({
+export default defineConfig({
   // Your ESLint rules here
   env: {
     node: true,

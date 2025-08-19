@@ -1,24 +1,20 @@
 // eslint.config.js (ES Modules)
 
-import eslint from 'eslint';
-const { defineConfig } = eslint;
-
-export default defineConfig({
-  // Your ESLint rules here
+// Directly export the ESLint configuration object
+export default {
   env: {
     node: true,
-    es2021: true
+    es2021: true,
   },
   extends: [
-    'eslint:recommended'
+    'eslint:recommended',
   ],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
   rules: {
-    // Add your rules here
     'no-unused-vars': 'warn',
     'no-console': 'off',
-  }
-});
+  },
+};

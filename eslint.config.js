@@ -1,20 +1,18 @@
-// eslint.config.js (ES Modules)
+// eslint.config.js (Flat Config)
 
-// Directly export the ESLint configuration object
-export default {
-  env: {
-    node: true,
-    es2021: true,
-  },
-  extends: [
-    'eslint:recommended',
-  ],
-  parserOptions: {
+import { FlatConfig } from 'eslint';
+
+export default new FlatConfig({
+  languageOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
+    globals: {
+      node: true, // Define global variables for Node.js
+    },
   },
+  extends: ['eslint:recommended'],
   rules: {
     'no-unused-vars': 'warn',
     'no-console': 'off',
   },
-};
+});

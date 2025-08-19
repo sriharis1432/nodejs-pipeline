@@ -1,18 +1,22 @@
-// eslint.config.js (Flat Config)
+// eslint.config.js (Flat Config with ESLint)
 
-import { FlatConfig } from 'eslint';
+// Import the ESLint package
+import eslint from 'eslint';
 
-export default new FlatConfig({
-  languageOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    globals: {
-      node: true, // Define global variables for Node.js
+// Define the ESLint flat config
+export default [
+  {
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        node: true,
+      },
+    },
+    extends: ['eslint:recommended'],
+    rules: {
+      'no-unused-vars': 'warn',
+      'no-console': 'off',
     },
   },
-  extends: ['eslint:recommended'],
-  rules: {
-    'no-unused-vars': 'warn',
-    'no-console': 'off',
-  },
-});
+];

@@ -1,9 +1,5 @@
-// eslint.config.js (Flat Config with ESLint)
+// eslint.config.js (Flat Config without "extends")
 
-// Import the ESLint package
-import eslint from 'eslint';
-
-// Define the ESLint flat config
 export default [
   {
     languageOptions: {
@@ -13,10 +9,14 @@ export default [
         node: true,
       },
     },
-    extends: ['eslint:recommended'],
     rules: {
+      // Manually include ESLint recommended rules
       'no-unused-vars': 'warn',
       'no-console': 'off',
+      'eqeqeq': 'error',
+      'curly': 'error',
+      'no-magic-numbers': 'warn',
+      // Add other recommended rules here or from eslint:recommended
     },
   },
 ];
